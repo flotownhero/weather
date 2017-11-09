@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="weather">
+
+<title>Weather Outlook</title>
+
+<!-- <link rel="icon" href="img/icon.png" /> -->
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+<link rel="stylesheet" href="css/fuelux.min.css" />
+<link rel="stylesheet" href="css/weather.css" />
+</head>
+<body>
+	<div id="wayBack">
+		<div id="mainContent">
+			<div>
+				<div class='uil-ripple-css' style='transform: scale(0.6);'>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12">
+						<ul id="navUl">
+							<li id="btnHome" class="navLi"><a>Home</a></li>
+							<li id="btn5Day" class="navLi"><a>Five Day</a></li>
+							<li id="btnArea" class="navLi"><a>MO Overview</a></li>
+						</ul>
+					</div>
+				</div>
+				<div id="contenthome">
+					<div class="row">
+						<div class="col-xs-3 col-md-3">Home 1</div>
+						<div class="col-xs-5 col-md-5">Home 2</div>
+						<div class="col-xs-4 col-md-4">Home 3</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-3 col-md-3">Home 1</div>
+						<div class="col-xs-5 col-md-5">Home 2</div>
+						<div class="col-xs-4 col-md-4">Home 3</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-3 col-md-3">Home 1</div>
+						<div class="col-xs-5 col-md-5">Home 2</div>
+						<div class="col-xs-4 col-md-4">Home 3</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-3 col-md-12">
+							<p id="jsonLook"></p>
+						</div>
+					</div>
+				</div>
+				<div id="content5Day">
+					<br />
+					<div id="enter5Day" class="">
+						<div class="col-xs-2 col-md-2">
+							Enter Latitude : <input name="enterLat" class="form-control"></input>
+						</div>
+						<div class="col-xs-2 col-md-2">
+							Enter Longitude: <input name="enterLong" class="form-control"></input>
+						</div>
+						<div class="col-xs-2 col-md-2">
+							<br />
+							<button id="coordSubmit" class="btn label-success" type="button">Send
+								It!</button>
+						</div>
+						<div class="col-xs-6 col-md-6"></div>
+					</div>
+					<div class="row">
+						<div id="locationCity" class="col-xs-12 col-md-12"></div>
+					</div>
+					<div class="row">
+						<div id="ifWarn" class="col-xs-12 col-md-12"></div>
+					</div>
+					<div class="row">
+						<div id="title-1" class="col-xs-2 col-md-2 rightThis"></div>
+						<div id="title-2" class="col-xs-5 col-md-2 centerThis"></div>
+						<div id="title-3" class="col-xs-4 col-md-2 centerThis"></div>
+						<div id="title-4" class="col-xs-3 col-md-2 centerThis"></div>
+						<div id="title-5" class="col-xs-5 col-md-2 centerThis"></div>
+						<div id="title-6" class="col-xs-4 col-md-2 centerThis"></div>
+						<!-- <div class="col-xs-1 col-md-1"></div> -->
+					</div>
+					<div class="row">
+						<div id="row2-1" class="col-xs-2 col-md-2 rightThis"></div>
+						<div id="row2-2" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row2-3" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row2-4" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row2-5" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row2-6" class="col-xs-2 col-md-2 centerThis"></div>
+						<!-- <div class="col-xs-1 col-md-1"></div> -->
+					</div>
+					<div class="row">
+						<div id="row3-1" class="col-xs-2 col-md-2 rightThis"></div>
+						<div id="row3-2" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row3-3" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row3-4" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row3-5" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row3-6" class="col-xs-2 col-md-2 centerThis"></div>
+						<!-- <div class="col-xs-1 col-md-1"></div> -->
+					</div>
+					<div class="row">
+						<div id="row4-1" class="col-xs-2 col-md-2 rightThis"></div>
+						<div id="row4-2" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row4-3" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row4-4" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row4-5" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row4-6" class="col-xs-2 col-md-2 centerThis"></div>
+						<!-- <div class="col-xs-1 col-md-1"></div> -->
+					</div>
+					<div class="row">
+						<div id="row5-1" class="col-xs-2 col-md-2 rightThis"></div>
+						<div id="row5-2" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row5-3" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row5-4" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row5-5" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row5-6" class="col-xs-2 col-md-2 centerThis"></div>
+						<!-- <div class="col-xs-1 col-md-1"></div> -->
+					</div>
+					<div class="row">
+						<div id="row6-1" class="col-xs-2 col-md-2 rightThis"></div>
+						<div id="row6-2" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row6-3" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row6-4" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row6-5" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row6-6" class="col-xs-2 col-md-2 centerThis"></div>
+						<!-- <div class="col-xs-1 col-md-1"></div> -->
+					</div>
+					<div class="row">
+						<div id="row7-1" class="col-xs-2 col-md-2 rightThis"></div>
+						<div id="row7-2" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row7-3" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row7-4" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row7-5" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row7-6" class="col-xs-2 col-md-2 centerThis"></div>
+						<!-- <div class="col-xs-1 col-md-1"></div> -->
+					</div>
+					<div class="row">
+						<div id="row8-1" class="col-xs-2 col-md-2 rightThis"></div>
+						<div id="row8-2" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row8-3" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row8-4" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row8-5" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row8-6" class="col-xs-2 col-md-2 centerThis"></div>
+						<!-- <div class="col-xs-1 col-md-1"></div> -->
+					</div>
+					<div class="row">
+						<div id="row9-1" class="col-xs-2 col-md-2 rightThis"></div>
+						<div id="row9-2" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row9-3" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row9-4" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row9-5" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="row9-6" class="col-xs-2 col-md-2 centerThis"></div>
+						<!-- <div class="col-xs-1 col-md-1"></div> -->
+					</div>
+					<div class="row">
+						<!-- Last -->
+						<div id="rowLast-1" class="col-xs-2 col-md-2 rightThis"></div>
+						<div id="rowLast-2" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="rowLast-3" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="rowLast-4" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="rowLast-5" class="col-xs-2 col-md-2 centerThis"></div>
+						<div id="rowLast-6" class="col-xs-2 col-md-2 centerThis"></div>
+						<!-- <div class="col-xs-1 col-md-1"></div> -->
+					</div>
+				</div>
+				<div id="contentCommonArea" class="row">
+					<div class="col-xs-3 col-md-3">Directions 1</div>
+					<div class="col-xs-5 col-md-5">Directions 2</div>
+					<div class="col-xs-4 col-md-4">Directions 3</div>
+				</div>
+			</div>
+			<div class="container-fluid bottomBanner">
+				<div class="row">
+					<div class="col-xs-4"></div>
+					<div class="col-xs-4 dirCenter"></div>
+					<div class="col-xs-4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/fuelux.min.js"></script>
+	<script type="text/javascript" src="js/suncalc.js"></script>
+	<script type="text/javascript" src="js/weather.js"></script>
+</body>
+</html>
